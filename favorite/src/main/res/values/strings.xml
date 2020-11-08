@@ -1,0 +1,6 @@
+<resources>
+
+    //Favorite Teams
+    <string name="favorite_teams_toolbar_title">Favorite Teams</string>
+
+</resources>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/LeaguesFragment">
+
+    <fragment
+        android:id="@+id/LeaguesFragment"
+        android:name="com.fahlepyrizal01.footballnews.presenter.fragment.LeaguesFragment"
+        android:label="@string/leagues_fragment_label"
+        tools:layout="@layout/fragment_leagues">
+
+        <action
+            android:id="@+id/action_LeaguesFragment_to_LeagueDetailFragment"
+            app:destination="@id/LeagueDetailFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+
+        <action
+            android:id="@+id/action_LeaguesFragment_to_FavoriteTeamsFragment"
+            app:destination="@id/FavoriteTeamsFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+
+        <action
+            android:id="@+id/action_LeaguesFragment_to_SearchTeamsFragment"
+            app:destination="@id/SearchTeamsFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/LeagueDetailFragment"
+        android:name="com.fahlepyrizal01.footballnews.presenter.fragment.LeagueDetailFragment"
+        android:label="@string/league_detail_fragment_label"
+        tools:layout="@layout/fragment_league_detail">
+
+        <argument
+            android:name="idLeague"
+            android:defaultValue=""
+            app:argType="string" />
+
+        <action
+            android:id="@+id/action_LeagueDetailFragment_to_StandingsFragment"
+            app:destination="@id/StandingsFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+
+        <action
+            android:id="@+id/action_LeagueDetailFragment_to_TeamsFragment"
+            app:destination="@id/TeamsFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/StandingsFragment"
+        android:name="com.fahlepyrizal01.footballnews.presenter.fragment.StandingsFragment"
+        android:label="@string/standings_fragment_label"
+        tools:layout="@layout/fragment_standings">
+
+        <argument
+            android:name="idLeague"
+            android:defaultValue=""
+            app:argType="string" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/TeamsFragment"
+        android:name="com.fahlepyrizal01.footballnews.presenter.fragment.TeamsFragment"
+        android:label="@string/teams_fragment_label"
+        tools:layout="@layout/fragment_teams">
+
+        <argument
+            android:name="idLeague"
+            android:defaultValue=""
+            app:argType="string" />
+
+        <action
+            android:id="@+id/action_TeamsFragment_to_TeamDetailFragment"
+            app:destination="@id/TeamDetailFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/TeamDetailFragment"
+        android:name="com.fahlepyrizal01.footballnews.presenter.fragment.TeamDetailFragment"
+        android:label="@string/team_detail_fragment_label"
+        tools:layout="@layout/fragment_team_detail">
+
+        <argument
+            android:name="idTeam"
+            android:defaultValue=""
+            app:argType="string" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/FavoriteTeamsFragment"
+        android:name="com.fahlepyrizal01.favorite.presenter.fragment.FavoriteTeamsFragment"
+        android:label="@string/favorite_teams_fragment_label"
+        tools:layout="@layout/fragment_favorite_teams" >
+
+        <action
+            android:id="@+id/action_FavoriteFragment_to_TeamDetailFragment"
+            app:destination="@id/TeamDetailFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/SearchTeamsFragment"
+        android:name="com.fahlepyrizal01.footballnews.presenter.fragment.SearchTeamsFragment"
+        android:label="@string/search_teams_fragment_label"
+        tools:layout="@layout/fragment_search_teams" >
+
+        <action
+            android:id="@+id/action_SearchTeamsFragment_to_TeamDetailFragment"
+            app:destination="@id/TeamDetailFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+
+    </fragment>
+
+</navigation>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presenter.fragment.LeagueDetailFragment">
+
+    <ScrollView
+        android:layout_width="@dimen/match_constraint"
+        android:layout_height="@dimen/match_constraint"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tb_league_detail">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_flag_league_detail"
+                android:layout_width="@dimen/match_constraint"
+                android:layout_height="@dimen/league_detail_image_view_flag_height"
+                android:contentDescription="@null"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_logo_league_detail"
+                android:layout_width="@dimen/league_detail_image_view_logo_size"
+                android:layout_height="@dimen/league_detail_image_view_logo_size"
+                android:contentDescription="@null"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_flag_league_detail"
+                app:layout_constraintEnd_toEndOf="@+id/iv_flag_league_detail"
+                app:layout_constraintStart_toStartOf="@+id/iv_flag_league_detail"
+                app:layout_constraintTop_toBottomOf="@+id/iv_flag_league_detail" />
+
+            <TextView
+                android:id="@+id/tv_name_league_detail"
+                android:layout_width="@dimen/match_constraint"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/league_detail_text_view_name_margin_top"
+                android:textAlignment="center"
+                android:textSize="@dimen/regular_text_size"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_logo_league_detail" />
+
+            <TextView
+                android:id="@+id/tv_id_league_detail"
+                android:layout_width="@dimen/match_constraint"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textSize="@dimen/regular_text_size"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_name_league_detail" />
+
+            <TextView
+                android:id="@+id/tv_description_label_league_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/league_detail_text_view_description_label_margin_start"
+                android:layout_marginTop="@dimen/league_detail_text_view_description_label_margin_top"
+                android:text="@string/league_detail_description_label"
+                android:textAlignment="center"
+                android:textSize="@dimen/regular_text_size"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_id_league_detail" />
+
+            <TextView
+                android:id="@+id/tv_description_league_detail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/league_detail_text_view_description_margin_top"
+                android:layout_marginEnd="@dimen/league_detail_text_view_description_margin_end"
+                android:paddingBottom="@dimen/league_detail_text_view_description_padding_bottom"
+                android:textAlignment="center"
+                android:textSize="@dimen/regular_text_size"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tv_description_label_league_detail"
+                app:layout_constraintTop_toBottomOf="@+id/tv_description_label_league_detail" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btn_see_table_league_detail"
+        android:layout_width="@dimen/match_constraint"
+        android:layout_height="@dimen/league_detail_button_height"
+        android:layout_marginStart="@dimen/general_parent_margin_horizontal"
+        android:text="@string/league_detail_button_see_table"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btb_see_team_league_detail"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btb_see_team_league_detail"
+        android:layout_width="@dimen/match_constraint"
+        android:layout_height="@dimen/league_detail_button_height"
+        android:layout_marginStart="@dimen/league_detail_button_see_team_margin_start"
+        android:layout_marginEnd="@dimen/general_parent_margin_horizontal"
+        android:text="@string/league_detail_button_see_team"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_see_table_league_detail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_see_table_league_detail"
+        app:layout_constraintTop_toTopOf="@+id/btn_see_table_league_detail" />
+
+    <ImageView
+        android:id="@+id/iv_empty_or_error_league_detail"
+        android:layout_width="@dimen/match_constraint"
+        android:layout_height="@dimen/match_constraint"
+        android:background="@color/white"
+        android:contentDescription="@null"
+        android:padding="@dimen/general_error_or_empty_icon_padding"
+        android:src="@drawable/ic_error_or_empty"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tb_league_detail" />
+
+    <ProgressBar
+        android:id="@+id/pb_league_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tb_league_detail"
+        android:layout_width="@dimen/match_constraint"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:title="@string/league_detail_toolbar_title"
+        app:titleTextColor="@android:color/white" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

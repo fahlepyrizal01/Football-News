@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    //General
+    <dimen name="match_constraint">0dp</dimen>
+    <dimen name="general_parent_margin_horizontal">16dp</dimen>
+    <dimen name="general_recycler_view_item_margin">5dp</dimen>
+    <dimen name="recyclerview_to_toolbar_margin_top">66dp</dimen>
+    <dimen name="general_card_view_radius">8dp</dimen>
+    <dimen name="general_card_view_padding">16dp</dimen>
+    <dimen name="general_card_view_margin">16dp</dimen>
+    <dimen name="regular_text_size">16sp</dimen>
+    <dimen name="general_floating_action_button_size">100dp</dimen>
+    <dimen name="general_error_or_empty_icon_padding">150dp</dimen>
+
+    //Leagues
+    <dimen name="leagues_recycler_view_padding_bottom">100dp</dimen>
+    <dimen name="leagues_fab_margin_bottom">16dp</dimen>
+    <dimen name="leagues_fab_margin_end">16dp</dimen>
+    <dimen name="leagues_recycler_view_item_name_margin_top">8dp</dimen>
+    <dimen name="leagues_recycler_view_item_margin_end">16dp</dimen>
+    <dimen name="leagues_child_floating_action_button_margin_button">10dp</dimen>
+
+    //League Detail
+    <dimen name="league_detail_image_view_flag_height">170dp</dimen>
+    <dimen name="league_detail_image_view_logo_size">110dp</dimen>
+    <dimen name="league_detail_text_view_name_margin_top">8dp</dimen>
+    <dimen name="league_detail_text_view_description_margin_top">8dp</dimen>
+    <dimen name="league_detail_text_view_description_margin_end">16dp</dimen>
+    <dimen name="league_detail_text_view_description_padding_bottom">100dp</dimen>
+    <dimen name="league_detail_text_view_description_label_margin_start">16dp</dimen>
+    <dimen name="league_detail_text_view_description_label_margin_top">16dp</dimen>
+    <dimen name="league_detail_button_height">60dp</dimen>
+    <dimen name="league_detail_button_see_team_margin_start">8dp</dimen>
+
+    //Standings
+    <dimen name="standings_recycler_view_item_card_view_padding">3dp</dimen>
+    <dimen name="standings_recycler_view_item_card_view_margin_bottom">8dp</dimen>
+    <dimen name="standings_recycler_view__margin_bottom">16dp</dimen>
+
+    //Teams
+    <dimen name="teams_recycler_view__margin_bottom">16dp</dimen>
+    <dimen name="teams_recycler_view_item_card_view_padding">8dp</dimen>
+    <dimen name="teams_recycler_view_item_card_view_margin_bottom">8dp</dimen>
+    <dimen name="teams_recycler_view_logo_size">50dp</dimen>
+    <dimen name="teams_text_view_name_margin_start">8dp</dimen>
+    <dimen name="teams_text_view_name_size">20sp</dimen>
+
+    //Team Detail
+    <dimen name="team_detail_image_view_logo_margin_start">16dp</dimen>
+    <dimen name="team_detail_image_view_logo_padding">8dp</dimen>
+    <dimen name="team_detail_text_view_id_label_margin_start">16dp</dimen>
+    <dimen name="team_detail_text_view_id_label_margin_top">16dp</dimen>
+    <dimen name="team_detail_text_view_general_value_margin_start">3dp</dimen>
+    <dimen name="team_detail_text_view_id_value_margin_end">16dp</dimen>
+    <dimen name="team_detail_text_view_general_label_margin_top">8dp</dimen>
+    <dimen name="team_detail_text_view_youtube_value_margin_bottom">16dp</dimen>
+    <dimen name="team_detail_image_view_logo_width">110dp</dimen>
+    <dimen name="team_detail_view_line_height">1dp</dimen>
+    <dimen name="team_detail_image_view_error_or_empty_padding">130</dimen>
+
+    //Events
+    <dimen name="events_recycler_view_item_card_view_padding">8dp</dimen>
+    <dimen name="events_recycler_view_item_text_view_general_size">20sp</dimen>
+    <dimen name="events_recycler_view_item_text_view_score_size">25sp</dimen>
+    <dimen name="events_recycler_view_item_text_view_score_margin_horizontal">8dp</dimen>
+    <dimen name="events_recycler_view_item_text_view_name_margin_horizontal">3dp</dimen>
+    <dimen name="events_recycler_view_item_text_view_name_margin_top">8dp</dimen>
+    <dimen name="events_recycler_view_padding_bottom">100dp</dimen>
+    <dimen name="events_recycler_view_padding_top">16dp</dimen>
+    <dimen name="events_progress_bar_margin_top">16dp</dimen>
+
+    //Search Teams
+    <dimen name="search_teams_image_view_back_margin_start">16dp</dimen>
+    <dimen name="search_teams_card_view_margin_horizontal">16dp</dimen>
+    <dimen name="search_teams_card_view_margin_vertical">8dp</dimen>
+
+</resources>

@@ -1,0 +1,62 @@
+<resources>
+    <string name="app_name">Football News</string>
+    <string name="title_favorite">Favorite Teams</string>
+
+
+    <string name="menu_favorite_title">Favorite</string>
+
+    //Fragment Label
+    <string name="leagues_fragment_label">Leagues Fragment</string>
+    <string name="league_detail_fragment_label">League Detail Fragment</string>
+    <string name="standings_fragment_label">Standings Fragment</string>
+    <string name="teams_fragment_label">Teams Fragment</string>
+    <string name="team_detail_fragment_label">Team Detail Fragment</string>
+    <string name="favorite_teams_fragment_label">Favorite Teams Fragment</string>
+    <string name="search_teams_fragment_label">Search Teams Fragment</string>
+
+    //League Detail
+    <string name="league_detail_toolbar_title">League Detail</string>
+    <string name="league_detail_description_label">Description :</string>
+    <string name="league_detail_button_see_table">See Standing</string>
+    <string name="league_detail_button_see_team">See Team</string>
+    <string name="league_detail_button_see_event">See Event</string>
+
+    //Standings
+    <string name="standings_toolbar_title">Standings</string>
+    <string name="standings_text_view_team_label">Team</string>
+    <string name="standings_text_view_played_label">Played</string>
+    <string name="standings_text_view_win_label">Win</string>
+    <string name="standings_text_view_draw_label">Draw</string>
+    <string name="standings_text_view_loss_label">Loss</string>
+    <string name="standings_text_view_goal_label">Goal</string>
+    <string name="standings_text_view_total_label">Total</string>
+
+    //Teams
+    <string name="teams_toolbar_title">Teams</string>
+
+    //Team Detail
+    <string name="team_detail_toolbar_title">Team Detail</string>
+    <string name="team_detail_text_view_id_label">ID :</string>
+    <string name="team_detail_text_view_name_label">Name :</string>
+    <string name="team_detail_text_view_stadium_label">Stadium :</string>
+    <string name="team_detail_text_view_formed_year_label">Formed Year :</string>
+    <string name="team_detail_text_view_league_label">League :</string>
+    <string name="team_detail_text_view_gender_label">Gender :</string>
+    <string name="team_detail_text_view_country_label">Country :</string>
+    <string name="team_detail_text_view_website_label">Website :</string>
+    <string name="team_detail_text_view_facebook_label">Facebook :</string>
+    <string name="team_detail_text_view_twitter_label">Twitter :</string>
+    <string name="team_detail_text_view_youtube_label">Youtube :</string>
+    <string name="team_detail_toast_failed_label">Failed to get team detail.</string>
+
+    //Events
+    <string name="events_item_text_view_vs_label">VS</string>
+    <string name="event_last_event">Last Event</string>
+    <string name="event_next_event">Next Event</string>
+
+    //Search Teams
+    <string name="search_teams_query_hint">Type the team name</string>
+
+
+
+</resources>

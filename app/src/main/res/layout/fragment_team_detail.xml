@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presenter.fragment.TeamDetailFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+            app:titleEnabled="false">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/light_blue"
+                android:paddingTop="?attr/actionBarSize">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="@dimen/match_constraint"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/general_card_view_margin"
+                    app:cardCornerRadius="@dimen/general_card_view_radius"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/iv_logo_team_detail"
+                            android:layout_width="@dimen/team_detail_image_view_logo_width"
+                            android:layout_height="@dimen/match_constraint"
+                            android:layout_marginStart="@dimen/team_detail_image_view_logo_margin_start"
+                            android:background="?attr/colorPrimary"
+                            android:contentDescription="@null"
+                            android:padding="@dimen/team_detail_image_view_logo_padding"
+                            app:layout_constraintBottom_toBottomOf="@+id/tv_country_value_team_detail"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tv_id_label_team_detail" />
+
+                        <TextView
+                            android:id="@+id/tv_id_label_team_detail"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/team_detail_text_view_id_label_margin_start"
+                            android:layout_marginTop="@dimen/team_detail_text_view_id_label_margin_top"
+                            android:text="@string/team_detail_text_view_id_label"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toEndOf="@+id/iv_logo_team_detail"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_id_value_team_detail"
+                            android:layout_width="@dimen/match_constraint"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/team_detail_text_view_general_value_margin_start"
+                            android:layout_marginEnd="@dimen/team_detail_text_view_id_value_margin_end"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/tv_id_label_team_detail"
+                            app:layout_constraintTop_toTopOf="@+id/tv_id_label_team_detail" />
+
+                        <TextView
+                            android:id="@+id/tv_name_label_team_detail"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/team_detail_text_view_general_label_margin_top"
+                            android:text="@string/team_detail_text_view_name_label"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="@+id/tv_id_label_team_detail"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_id_value_team_detail" />
+
+                        <TextView
+                            android:id="@+id/tv_name_value_team_detail"
+                            android:layout_width="@dimen/match_constraint"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/team_detail_text_view_general_value_margin_start"
+                            app:layout_constraintEnd_toEndOf="@+id/tv_id_value_team_detail"
+                            app:layout_constraintStart_toEndOf="@+id/tv_name_label_team_detail"
+                            app:layout_constraintTop_toTopOf="@+id/tv_name_label_team_detail" />
+
+                        <TextView
+                            android:id="@+id/tv_stadium_label_team_detail"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/team_detail_text_view_general_label_margin_top"
+                            android:text="@string/team_detail_text_view_stadium_label"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="@+id/tv_id_label_team_detail"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_name_value_team_detail" />
+
+                        <TextView
+                            android:id="@+id/tv_stadium_value_team_detail"
+                            android:layout_width="@dimen/match_constraint"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/team_detail_text_view_general_value_margin_start"
+                            app:layout_constraintEnd_toEndOf="@+id/tv_id_value_team_detail"
+                            app:layout_constraintStart_toEndOf="@+id/tv_stadium_label_team_detail"
+                            app:layout_constraintTop_toTopOf="@+id/tv_stadium_label_team_detail" />
+
+                        <TextView
+                            android:id="@+id/tv_formed_year_label_team_detail"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/team_detail_text_view_general_label_margin_top"
+                            android:text="@string/team_detail_text_view_formed_year_label"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="@+id/tv_id_label_team_detail"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_stadium_value_team_detail" />
+
+                        <TextView
+                            android:id="@+id/tv_formed_year_value_team_detail"
+                            android:layout_width="@dimen/match_constraint"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/team_detail_text_view_general_value_margin_start"
+                            app:layout_constraintEnd_toEndOf="@+id/tv_id_value_team_detail"
+                            app:layout_constraintStart_toEndOf="@+id/tv_formed_year_label_team_detail"
+                            app:layout_constraintTop_toTopOf="@+id/tv_formed_year_label_team_detail" />
+
+                        <TextView
+                            android:id="@+id/tv_league_label_team_detail"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/team_detail_text_view_general_label_margin_top"
+                            android:text="@string/team_detail_text_view_league_label"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="@+id/tv_id_label_team_detail"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_formed_year_value_team_detail" />
+
+                        <TextView
+                            android:id="@+id/tv_league_value_team_detail"
+                            android:layout_width="@dimen/match_constraint"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/team_detail_text_view_general_value_margin_start"
+                            app:layout_constraintEnd_toEndOf="@+id/tv_id_value_team_detail"
+                            app:layout_constraintStart_toEndOf="@+id/tv_league_label_team_detail"
+                            app:layout_constraintTop_toTopOf="@+id/tv_league_label_team_detail" />
+
+                        <TextView
+                            android:id="@+id/tv_gender_label_team_detail"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/team_detail_text_view_general_label_margin_top"
+                            android:text="@string/team_detail_text_view_gender_label"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="@+id/tv_id_label_team_detail"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_league_value_team_detail" />
+
+                        <TextView
+                            android:id="@+id/tv_gender_value_team_detail"
+                            android:layout_width="@dimen/match_constraint"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/team_detail_text_view_general_value_margin_start"
+                            app:layout_constraintEnd_toEndOf="@+id/tv_id_value_team_detail"
+                            app:layout_constraintStart_toEndOf="@+id/tv_gender_label_team_detail"
+                            app:layout_constraintTop_toTopOf="@+id/tv_gender_label_team_detail" />
+
+                        <TextView
+                            android:id="@+id/tv_country_label_team_detail"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/team_detail_text_view_general_label_margin_top"
+                            android:text="@string/team_detail_text_view_country_label"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="@+id/tv_id_label_team_detail"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_gender_value_team_detail" />
+
+                        <TextView
+                            android:id="@+id/tv_country_value_team_detail"
+                            android:layout_width="@dimen/match_constraint"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/team_detail_text_view_general_value_margin_start"
+                            app:layout_constraintEnd_toEndOf="@+id/tv_id_value_team_detail"
+                            app:layout_constraintStart_toEndOf="@+id/tv_country_label_team_detail"
+                            app:layout_constraintTop_toTopOf="@+id/tv_country_label_team_detail" />
+
+                        <TextView
+                            android:id="@+id/tv_website_label_team_detail"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/team_detail_text_view_general_label_margin_top"
+                            android:text="@string/team_detail_text_view_website_label"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="@+id/iv_logo_team_detail"
+                            app:layout_constraintTop_toBottomOf="@+id/iv_logo_team_detail" />
+
+                        <TextView
+                            android:id="@+id/tv_website_value_team_detail"
+                            android:layout_width="@dimen/match_constraint"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/team_detail_text_view_general_value_margin_start"
+                            android:autoLink="web"
+                            app:layout_constraintEnd_toEndOf="@+id/tv_id_value_team_detail"
+                            app:layout_constraintStart_toEndOf="@+id/tv_website_label_team_detail"
+                            app:layout_constraintTop_toTopOf="@+id/tv_website_label_team_detail" />
+
+                        <TextView
+                            android:id="@+id/tv_facebook_label_team_detail"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/team_detail_text_view_general_label_margin_top"
+                            android:text="@string/team_detail_text_view_facebook_label"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="@+id/tv_website_label_team_detail"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_website_value_team_detail" />
+
+                        <TextView
+                            android:id="@+id/tv_facebook_value_team_detail"
+                            android:layout_width="@dimen/match_constraint"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/team_detail_text_view_general_value_margin_start"
+                            android:autoLink="web"
+                            app:layout_constraintEnd_toEndOf="@+id/tv_id_value_team_detail"
+                            app:layout_constraintStart_toEndOf="@+id/tv_facebook_label_team_detail"
+                            app:layout_constraintTop_toTopOf="@+id/tv_facebook_label_team_detail" />
+
+                        <TextView
+                            android:id="@+id/tv_twitter_label_team_detail"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/team_detail_text_view_general_label_margin_top"
+                            android:text="@string/team_detail_text_view_twitter_label"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="@+id/tv_website_label_team_detail"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_facebook_value_team_detail" />
+
+                        <TextView
+                            android:id="@+id/tv_twitter_value_team_detail"
+                            android:layout_width="@dimen/match_constraint"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/team_detail_text_view_general_value_margin_start"
+                            android:autoLink="web"
+                            app:layout_constraintEnd_toEndOf="@+id/tv_id_value_team_detail"
+                            app:layout_constraintStart_toEndOf="@+id/tv_twitter_label_team_detail"
+                            app:layout_constraintTop_toTopOf="@+id/tv_twitter_label_team_detail" />
+
+                        <TextView
+                            android:id="@+id/tv_youtube_label_team_detail"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/team_detail_text_view_general_label_margin_top"
+                            android:text="@string/team_detail_text_view_youtube_label"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="@+id/tv_website_label_team_detail"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_twitter_value_team_detail" />
+
+                        <TextView
+                            android:id="@+id/tv_youtube_value_team_detail"
+                            android:layout_width="@dimen/match_constraint"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/team_detail_text_view_general_value_margin_start"
+                            android:layout_marginBottom="@dimen/team_detail_text_view_youtube_value_margin_bottom"
+                            android:autoLink="web"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="@+id/tv_id_value_team_detail"
+                            app:layout_constraintStart_toEndOf="@+id/tv_youtube_label_team_detail"
+                            app:layout_constraintTop_toTopOf="@+id/tv_youtube_label_team_detail" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/tb_team_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/colorPrimary"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                app:layout_collapseMode="pin"
+                app:navigationIcon="@drawable/ic_arrow_back"
+                app:title="Details"
+                app:titleTextColor="@android:color/white" />
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tl_team_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/team_detail_view_line_height"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintTop_toBottomOf="@+id/tl_team_detail" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/vp_team_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_favorite_team_detail"
+            android:layout_width="wrap_content"
+            app:tint="@color/white"
+            android:layout_height="@dimen/general_floating_action_button_size"
+            android:layout_marginEnd="@dimen/leagues_fab_margin_end"
+            android:layout_marginBottom="@dimen/leagues_fab_margin_bottom"
+            android:contentDescription="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:src="@drawable/ic_favorite_add" />
+
+        <ProgressBar
+            android:id="@+id/pb_team_detail"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

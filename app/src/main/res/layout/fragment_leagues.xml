@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    tools:context=".presenter.fragment.LeaguesFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="@dimen/match_constraint"
+        android:layout_height="@dimen/match_constraint"
+        android:paddingHorizontal="@dimen/general_parent_margin_horizontal"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_league_league"
+                android:layout_width="@dimen/match_constraint"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="@bool/general_recycler_view_nested_scroll"
+                android:paddingTop="@dimen/recyclerview_to_toolbar_margin_top"
+                android:paddingBottom="@dimen/leagues_recycler_view_padding_bottom"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <ImageView
+        android:id="@+id/iv_empty_or_error_leagues"
+        android:layout_width="@dimen/match_constraint"
+        android:layout_height="@dimen/match_constraint"
+        android:background="@color/white"
+        android:contentDescription="@null"
+        android:padding="@dimen/general_error_or_empty_icon_padding"
+        android:src="@drawable/ic_error_or_empty"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tb_leagues" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_menu_league"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/general_floating_action_button_size"
+        android:layout_marginEnd="@dimen/leagues_fab_margin_end"
+        android:layout_marginBottom="@dimen/leagues_fab_margin_bottom"
+        android:contentDescription="@null"
+        android:rotation="180"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_menu_more"
+        app:tint="@color/white" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_favorite_league"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/general_floating_action_button_size"
+        android:layout_marginBottom="@dimen/leagues_child_floating_action_button_margin_button"
+        android:contentDescription="@null"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/fab_menu_league"
+        app:layout_constraintEnd_toEndOf="@+id/fab_menu_league"
+        app:layout_constraintStart_toStartOf="@+id/fab_menu_league"
+        app:srcCompat="@drawable/ic_favorites"
+        app:tint="@color/white" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_search_league"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/general_floating_action_button_size"
+        android:layout_marginBottom="@dimen/leagues_child_floating_action_button_margin_button"
+        android:contentDescription="@null"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/fab_favorite_league"
+        app:layout_constraintEnd_toEndOf="@+id/fab_favorite_league"
+        app:layout_constraintStart_toStartOf="@+id/fab_favorite_league"
+        app:srcCompat="@drawable/ic_search"
+        app:tint="@color/white" />
+
+    <ProgressBar
+        android:id="@+id/pb_league"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tb_leagues"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/app_name"
+        app:titleTextColor="@android:color/white" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

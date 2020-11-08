@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/events_recycler_view_item_card_view_padding"
+    app:cardCornerRadius="@dimen/general_card_view_radius"
+    app:contentPadding="@dimen/general_card_view_padding">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_events"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.50" />
+
+        <TextView
+            android:id="@+id/tv_date_events"
+            android:layout_width="@dimen/match_constraint"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_strip_events"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/events_item_text_view_vs_label"
+            android:textAlignment="center"
+            android:textSize="@dimen/events_recycler_view_item_text_view_general_size"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_home_score_events"
+            app:layout_constraintEnd_toEndOf="@+id/gl_events"
+            app:layout_constraintStart_toStartOf="@+id/gl_events"
+            app:layout_constraintTop_toTopOf="@+id/tv_home_score_events" />
+
+        <TextView
+            android:id="@+id/tv_home_name_events"
+            android:layout_width="@dimen/match_constraint"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/events_recycler_view_item_text_view_name_margin_top"
+            android:layout_marginEnd="@dimen/events_recycler_view_item_text_view_name_margin_horizontal"
+            android:textAlignment="center"
+            android:textSize="@dimen/events_recycler_view_item_text_view_general_size"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tv_home_score_events"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_date_events" />
+
+        <TextView
+            android:id="@+id/tv_home_score_events"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/events_recycler_view_item_text_view_score_margin_horizontal"
+            android:textAlignment="center"
+            android:textSize="@dimen/events_recycler_view_item_text_view_score_size"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_home_name_events"
+            app:layout_constraintEnd_toStartOf="@+id/tv_strip_events"
+            app:layout_constraintTop_toTopOf="@+id/tv_home_name_events" />
+
+        <TextView
+            android:id="@+id/tv_away_name_events"
+            android:layout_width="@dimen/match_constraint"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/events_recycler_view_item_text_view_name_margin_horizontal"
+            android:textAlignment="center"
+            android:textSize="@dimen/events_recycler_view_item_text_view_general_size"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_home_name_events"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_away_score_events"
+            app:layout_constraintTop_toTopOf="@+id/tv_home_name_events" />
+
+        <TextView
+            android:id="@+id/tv_away_score_events"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/events_recycler_view_item_text_view_score_margin_horizontal"
+            android:textAlignment="center"
+            android:textSize="@dimen/events_recycler_view_item_text_view_score_size"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_away_name_events"
+            app:layout_constraintStart_toEndOf="@+id/tv_strip_events"
+            app:layout_constraintTop_toTopOf="@+id/tv_away_name_events" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
