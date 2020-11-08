@@ -34,6 +34,13 @@ buildscript {
     ext.kotlin_coroutines_version = "1.4.0"
     ext.lifecycle_version = "2.2.0"
 
+    ext.leack_canary_version = "2.4"
+
+    ext.sqlite_version = "2.1.0"
+    ext.sql_cipher_version = "4.4.0"
+
+    ext.lottie_version = "3.4.1"
+
     repositories {
         google()
         jcenter()

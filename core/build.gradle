@@ -19,7 +19,15 @@ android {
         consumerProguardFiles "consumer-rules.pro"
 
         buildConfigField "String", "BASE_URL", "\"https://www.thesportsdb.com/\""
+        buildConfigField "String", "API_PATH", "\"api/v1/json/\""
         buildConfigField "String", "TSDB_API_KEY", "\"1\""
+        buildConfigField "String", "HOST_NAME", "\"thesportsdb.com\""
+        buildConfigField "String", "FIRST_CERTIFICATE", "\"sha256/ctt1haazs8U6LJbBhG1dMDCxflw6Q5LRFqlJP+iCf3E=\""
+        buildConfigField "String", "SECOND_CERTIFICATE", "\"sha256/FEzVOUp4dF3gI0ZVPRJhFbSJVXR+uQmMH65xhs1glH4=\""
+        buildConfigField "String", "THIRD_CERTIFICATE", "\"sha256/Y9mvm0exBk1JoQ57f9Vm28jKo5lFm/woKcVxrYxu80o=\""
+        buildConfigField "String", "ENCRYPT_PASSWORD", "\"your_password\""
+        buildConfigField "String", "DATABSE_NAME", "\"Football.db\""
+
     }
 
     buildTypes {
@@ -28,7 +36,8 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         debug {
-            minifyEnabled true
+            minifyEnabled false
+            useProguard false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -49,5 +58,8 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlin_coroutines_version"
     implementation "androidx.room:room-ktx:$room_version"
     api "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+
+    implementation "net.zetetic:android-database-sqlcipher:$sql_cipher_version"
+    implementation "androidx.sqlite:sqlite-ktx:$sqlite_version"
 
 }

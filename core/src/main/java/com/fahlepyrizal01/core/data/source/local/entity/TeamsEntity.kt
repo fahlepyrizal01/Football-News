@@ -204,6 +204,4 @@ data class TeamsEntity(
     @ColumnInfo(name = "isFavorite")
     val isFavorite: Boolean
 
-) {
-
-}
+)

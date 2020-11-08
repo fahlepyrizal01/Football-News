@@ -58,21 +58,21 @@ class SearchTeamsFragment : Fragment() {
                 is Resource.Loading -> {
                     it.getLoadingStateIfNotHandled()?.let {
                         rv_teams_search_teams.visibility = View.GONE
-                        pb_search_teams.visibility = View.VISIBLE
+                        lav_progress_search_teams.visibility = View.VISIBLE
                     }
                 }
                 is Resource.Success -> {
                     it.getSuccessStateIfNotHandled()?.let { data ->
-                        pb_search_teams.visibility = View.GONE
-                        iv_empty_or_error_search_teams.visibility = View.GONE
+                        lav_progress_search_teams.visibility = View.GONE
+                        lav_empty_or_error_search_teams.visibility = View.GONE
                         recyclerViewAdapter.setData(data)
                         rv_teams_search_teams.visibility = View.VISIBLE
                     }
                 }
                 is Resource.Error -> {
                     it.getErrorStateIfNotHandled()?.let {
-                        pb_search_teams.visibility = View.GONE
-                        iv_empty_or_error_search_teams.visibility = View.VISIBLE
+                        lav_progress_search_teams.visibility = View.GONE
+                        lav_empty_or_error_search_teams.visibility = View.VISIBLE
                     }
                 }
             }
@@ -99,6 +99,23 @@ class SearchTeamsFragment : Fragment() {
         })
 
         cv_search_teams.setOnClickListener { sv_search_teams.requestFocus() }
+    }
+
+    override fun onDestroyView() {
+
+        rv_teams_search_teams.apply {
+            addOnAttachStateChangeListener(object : View.OnAttachStateChangeListener{
+                override fun onViewAttachedToWindow(v: View?) {}
+
+                override fun onViewDetachedFromWindow(v: View?) {
+                    adapter = null
+                }
+
+            })
+        }
+
+        super.onDestroyView()
+
     }
 
     private fun setupRecyclerView() = with(rv_teams_search_teams) {

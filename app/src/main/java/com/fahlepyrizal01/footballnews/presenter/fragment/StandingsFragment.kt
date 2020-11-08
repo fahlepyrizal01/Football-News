@@ -47,21 +47,21 @@ class StandingsFragment : Fragment() {
                 is Resource.Loading -> {
                     it.getLoadingStateIfNotHandled()?.let {
                         rv_standing_standing.visibility = View.GONE
-                        pb_standings.visibility = View.VISIBLE
+                        lav_progress_standings.visibility = View.VISIBLE
                     }
                 }
                 is Resource.Success -> {
                     it.getSuccessStateIfNotHandled()?.let { data ->
-                        pb_standings.visibility = View.GONE
-                        iv_empty_or_error_standings.visibility = View.GONE
+                        lav_progress_standings.visibility = View.GONE
+                        lav_empty_or_error_standings.visibility = View.GONE
                         recyclerViewAdapter.setData(data)
                         rv_standing_standing.visibility = View.VISIBLE
                     }
                 }
                 is Resource.Error -> {
                     it.getErrorStateIfNotHandled()?.let {
-                        pb_standings.visibility = View.GONE
-                        iv_empty_or_error_standings.visibility = View.VISIBLE
+                        lav_progress_standings.visibility = View.GONE
+                        lav_empty_or_error_standings.visibility = View.VISIBLE
                     }
                 }
             }
@@ -70,6 +70,23 @@ class StandingsFragment : Fragment() {
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.getStandingList(args.idLeague)
         }
+    }
+
+    override fun onDestroyView() {
+
+        rv_standing_standing.apply {
+            addOnAttachStateChangeListener(object : View.OnAttachStateChangeListener{
+                override fun onViewAttachedToWindow(v: View?) {}
+
+                override fun onViewDetachedFromWindow(v: View?) {
+                    adapter = null
+                }
+
+            })
+        }
+
+        super.onDestroyView()
+
     }
 
     private fun setupRecyclerView() = with(rv_standing_standing) {

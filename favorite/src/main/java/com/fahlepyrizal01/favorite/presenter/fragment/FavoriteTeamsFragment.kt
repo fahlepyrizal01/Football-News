@@ -47,24 +47,41 @@ class FavoriteTeamsFragment : Fragment() {
         setupRecyclerView()
 
         viewModel.teams.observe(viewLifecycleOwner, {
-            pb_search_teams.visibility = View.GONE
+            lav_progress_favorite_teams.visibility = View.GONE
             if (it.isNullOrEmpty()) {
-                iv_empty_or_error_search_teams.visibility = View.VISIBLE
-                rv_teams_search_teams.visibility = View.GONE
+                lav_empty_or_error_favorite_teams.visibility = View.VISIBLE
+                rv_teams_favorite_teams.visibility = View.GONE
             } else {
-                iv_empty_or_error_search_teams.visibility = View.GONE
+                lav_empty_or_error_favorite_teams.visibility = View.GONE
                 recyclerViewAdapter.setData(it)
-                rv_teams_search_teams.visibility = View.VISIBLE
+                rv_teams_favorite_teams.visibility = View.VISIBLE
             }
         })
 
-        pb_search_teams.visibility = View.VISIBLE
+        lav_progress_favorite_teams.visibility = View.VISIBLE
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.getFavoriteList()
         }
     }
 
-    private fun setupRecyclerView() = with(rv_teams_search_teams) {
+    override fun onDestroyView() {
+
+        rv_teams_favorite_teams.apply {
+            addOnAttachStateChangeListener(object : View.OnAttachStateChangeListener {
+                override fun onViewAttachedToWindow(v: View?) {}
+
+                override fun onViewDetachedFromWindow(v: View?) {
+                    adapter = null
+                }
+
+            })
+        }
+
+        super.onDestroyView()
+
+    }
+
+    private fun setupRecyclerView() = with(rv_teams_favorite_teams) {
         layoutManager = LinearLayoutManager(context)
         adapter = recyclerViewAdapter
     }

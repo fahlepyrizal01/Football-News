@@ -3,7 +3,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/LeaguesFragment">
+    app:startDestination="@id/SplashFragment">
+
+    <fragment
+        android:id="@+id/SplashFragment"
+        android:name="com.fahlepyrizal01.footballnews.presenter.fragment.SplashFragment"
+        android:label="@string/splash_fragment_label"
+        tools:layout="@layout/fragment_splash">
+
+        <action
+            android:id="@+id/action_SplashFragment_to_LeaguesFragment"
+            app:destination="@id/LeaguesFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/SplashFragment"
+            app:popUpToInclusive="true"/>
+
+    </fragment>
 
     <fragment
         android:id="@+id/LeaguesFragment"
@@ -117,7 +135,7 @@
         android:id="@+id/FavoriteTeamsFragment"
         android:name="com.fahlepyrizal01.favorite.presenter.fragment.FavoriteTeamsFragment"
         android:label="@string/favorite_teams_fragment_label"
-        tools:layout="@layout/fragment_favorite_teams" >
+        tools:layout="@layout/fragment_favorite_teams">
 
         <action
             android:id="@+id/action_FavoriteFragment_to_TeamDetailFragment"
@@ -133,7 +151,7 @@
         android:id="@+id/SearchTeamsFragment"
         android:name="com.fahlepyrizal01.footballnews.presenter.fragment.SearchTeamsFragment"
         android:label="@string/search_teams_fragment_label"
-        tools:layout="@layout/fragment_search_teams" >
+        tools:layout="@layout/fragment_search_teams">
 
         <action
             android:id="@+id/action_SearchTeamsFragment_to_TeamDetailFragment"

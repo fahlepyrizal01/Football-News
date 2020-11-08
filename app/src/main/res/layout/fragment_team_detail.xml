@@ -281,7 +281,7 @@
                 android:theme="?attr/actionBarTheme"
                 app:layout_collapseMode="pin"
                 app:navigationIcon="@drawable/ic_arrow_back"
-                app:title="Details"
+                app:title="@string/team_detail_toolbar_title"
                 app:titleTextColor="@android:color/white" />
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>

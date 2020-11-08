@@ -3,9 +3,8 @@
     <string name="title_favorite">Favorite Teams</string>
 
 
-    <string name="menu_favorite_title">Favorite</string>
-
     //Fragment Label
+    <string name="splash_fragment_label">Splash Fragment</string>
     <string name="leagues_fragment_label">Leagues Fragment</string>
     <string name="league_detail_fragment_label">League Detail Fragment</string>
     <string name="standings_fragment_label">Standings Fragment</string>
@@ -19,7 +18,6 @@
     <string name="league_detail_description_label">Description :</string>
     <string name="league_detail_button_see_table">See Standing</string>
     <string name="league_detail_button_see_team">See Team</string>
-    <string name="league_detail_button_see_event">See Event</string>
 
     //Standings
     <string name="standings_toolbar_title">Standings</string>
@@ -56,7 +54,5 @@
 
     //Search Teams
     <string name="search_teams_query_hint">Type the team name</string>
-
-
 
 </resources>

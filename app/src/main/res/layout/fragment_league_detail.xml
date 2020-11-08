@@ -70,6 +70,7 @@
                 android:layout_marginTop="@dimen/league_detail_text_view_description_label_margin_top"
                 android:text="@string/league_detail_description_label"
                 android:textAlignment="center"
+                android:visibility="gone"
                 android:textSize="@dimen/regular_text_size"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -120,25 +121,29 @@
         app:layout_constraintStart_toEndOf="@+id/btn_see_table_league_detail"
         app:layout_constraintTop_toTopOf="@+id/btn_see_table_league_detail" />
 
-    <ImageView
-        android:id="@+id/iv_empty_or_error_league_detail"
-        android:layout_width="@dimen/match_constraint"
-        android:layout_height="@dimen/match_constraint"
-        android:background="@color/white"
-        android:contentDescription="@null"
-        android:padding="@dimen/general_error_or_empty_icon_padding"
-        android:src="@drawable/ic_error_or_empty"
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lav_empty_or_error_league_detail"
+        android:layout_width="@dimen/general_lottie_animation_view_empty_or_error_size"
+        android:layout_height="@dimen/general_lottie_animation_view_empty_or_error_size"
         android:visibility="gone"
+        android:layout_centerHorizontal="true"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="loading.json"
+        app:lottie_loop="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tb_league_detail" />
 
-    <ProgressBar
-        android:id="@+id/pb_league_detail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lav_progress_league_detail"
+        android:layout_width="@dimen/general_lottie_animation_view_loading_size"
+        android:layout_height="@dimen/general_lottie_animation_view_loading_size"
         android:visibility="gone"
+        android:layout_centerHorizontal="true"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="loading.json"
+        app:lottie_loop="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

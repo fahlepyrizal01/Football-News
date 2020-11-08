@@ -1,8 +1,6 @@
 package com.fahlepyrizal01.footballnews.presenter.fragment
 
-import android.os.Build
 import android.os.Bundle
-import android.text.Html
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -44,20 +42,20 @@ class LeagueDetailFragment : Fragment() {
             when (it) {
                 is Resource.Loading -> {
                     it.getLoadingStateIfNotHandled()?.let {
-                        pb_league_detail.visibility = View.VISIBLE
+                        lav_progress_league_detail.visibility = View.VISIBLE
                     }
                 }
                 is Resource.Success -> {
                     it.getSuccessStateIfNotHandled()?.let { data ->
-                        pb_league_detail.visibility = View.GONE
-                        iv_empty_or_error_league_detail.visibility = View.GONE
+                        lav_progress_league_detail.visibility = View.GONE
+                        lav_empty_or_error_league_detail.visibility = View.GONE
                         setupUi(data)
                     }
                 }
                 is Resource.Error -> {
                     it.getErrorStateIfNotHandled()?.let {
-                        pb_league_detail.visibility = View.GONE
-                        iv_empty_or_error_league_detail.visibility = View.VISIBLE
+                        lav_progress_league_detail.visibility = View.GONE
+                        lav_empty_or_error_league_detail.visibility = View.VISIBLE
                     }
                 }
             }
@@ -76,7 +74,7 @@ class LeagueDetailFragment : Fragment() {
         tv_name_league_detail.text = data.strLeague
         tv_id_league_detail.text = data.idLeague
 
-
+        tv_description_label_league_detail.visibility = View.VISIBLE
         tv_description_league_detail.text =
             HtmlCompat.fromHtml(data.strDescriptionEN.orEmpty(), HtmlCompat.FROM_HTML_MODE_COMPACT)
 

@@ -44,21 +44,21 @@ class LeaguesFragment : Fragment() {
                 is Resource.Loading -> {
                     it.getLoadingStateIfNotHandled()?.let {
                         rv_league_league.visibility = View.GONE
-                        pb_league.visibility = View.VISIBLE
+                        lav_progress_league.visibility = View.VISIBLE
                     }
                 }
                 is Resource.Success -> {
                     it.getSuccessStateIfNotHandled()?.let { data ->
-                        pb_league.visibility = View.GONE
+                        lav_progress_league.visibility = View.GONE
                         recyclerViewAdapter.setData(data)
                         rv_league_league.visibility = View.VISIBLE
-                        iv_empty_or_error_leagues.visibility = View.GONE
+                        lav_empty_or_error_leagues.visibility = View.GONE
                     }
                 }
                 is Resource.Error -> {
                     it.getErrorStateIfNotHandled()?.let {
-                        pb_league.visibility = View.GONE
-                        iv_empty_or_error_leagues.visibility = View.VISIBLE
+                        lav_progress_league.visibility = View.GONE
+                        lav_empty_or_error_leagues.visibility = View.VISIBLE
                     }
                 }
             }
@@ -92,6 +92,23 @@ class LeaguesFragment : Fragment() {
                 LeaguesFragmentDirections.actionLeaguesFragmentToSearchTeamsFragment()
             )
         }
+    }
+
+    override fun onDestroyView() {
+
+        rv_league_league.apply {
+            addOnAttachStateChangeListener(object : View.OnAttachStateChangeListener{
+                override fun onViewAttachedToWindow(v: View?) {}
+
+                override fun onViewDetachedFromWindow(v: View?) {
+                    adapter = null
+                }
+
+            })
+        }
+
+        super.onDestroyView()
+
     }
 
     private fun setupRecyclerView() = with(rv_league_league) {

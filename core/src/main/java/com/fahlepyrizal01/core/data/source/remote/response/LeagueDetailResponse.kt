@@ -1,6 +1,5 @@
 package com.fahlepyrizal01.core.data.source.remote.response
 
-import com.fahlepyrizal01.core.utils.Resource.EMPTY_STRING
 import com.google.gson.annotations.SerializedName
 
 data class LeagueDetailResponse (

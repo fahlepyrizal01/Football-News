@@ -68,7 +68,7 @@ class EventsFragment : Fragment() {
                         is Resource.Success -> {
                             it.getSuccessStateIfNotHandled()?.let { data ->
                                 pb_event.visibility = View.GONE
-                                iv_empty_or_error_events.visibility = View.GONE
+                                lav_empty_or_error_events.visibility = View.GONE
                                 recyclerViewAdapter.setData(data)
                                 rv_event_event.visibility = View.VISIBLE
                             }
@@ -76,7 +76,7 @@ class EventsFragment : Fragment() {
                         is Resource.Error -> {
                             it.getErrorStateIfNotHandled()?.let {
                                 pb_event.visibility = View.GONE
-                                iv_empty_or_error_events.visibility = View.VISIBLE
+                                lav_empty_or_error_events.visibility = View.VISIBLE
                             }
                         }
                     }
@@ -88,6 +88,23 @@ class EventsFragment : Fragment() {
                 else viewModel.getNextEventList(idTeam)
             }
         }
+
+    }
+
+    override fun onDestroyView() {
+
+        rv_event_event.apply {
+            addOnAttachStateChangeListener(object : View.OnAttachStateChangeListener{
+                override fun onViewAttachedToWindow(v: View?) {}
+
+                override fun onViewDetachedFromWindow(v: View?) {
+                    adapter = null
+                }
+
+            })
+        }
+
+        super.onDestroyView()
 
     }
 

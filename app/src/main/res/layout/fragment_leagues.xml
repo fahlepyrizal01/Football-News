@@ -37,19 +37,19 @@
 
     </androidx.core.widget.NestedScrollView>
 
-    <ImageView
-        android:id="@+id/iv_empty_or_error_leagues"
-        android:layout_width="@dimen/match_constraint"
-        android:layout_height="@dimen/match_constraint"
-        android:background="@color/white"
-        android:contentDescription="@null"
-        android:padding="@dimen/general_error_or_empty_icon_padding"
-        android:src="@drawable/ic_error_or_empty"
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lav_empty_or_error_leagues"
+        android:layout_width="@dimen/general_lottie_animation_view_empty_or_error_size"
+        android:layout_height="@dimen/general_lottie_animation_view_empty_or_error_size"
+        android:layout_centerHorizontal="true"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tb_leagues" />
+        app:layout_constraintTop_toBottomOf="@+id/tb_leagues"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="loading.json"
+        app:lottie_loop="true" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_menu_league"
@@ -90,15 +90,19 @@
         app:srcCompat="@drawable/ic_search"
         app:tint="@color/white" />
 
-    <ProgressBar
-        android:id="@+id/pb_league"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lav_progress_league"
+        android:layout_width="@dimen/general_lottie_animation_view_loading_size"
+        android:layout_height="@dimen/general_lottie_animation_view_loading_size"
+        android:layout_centerHorizontal="true"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="loading.json"
+        app:lottie_loop="true" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/tb_leagues"
